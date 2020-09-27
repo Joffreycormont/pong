@@ -1,3 +1,12 @@
+function newGame()
+  player1.positionY = 0
+  player1.score = 0
+  player2.positionY = 0
+  player2.score = 0
+  currentScreen = "game"
+  restartRound()
+end
+
 function restartRound ()
   ball.positionX = love.graphics.getWidth() /2 + (ball.width/2)
   ball.positionY = love.graphics.getHeight() / 2
@@ -7,7 +16,7 @@ function restartRound ()
 end
 
 
-function checkPlayerColision (player)
+function checkPlayerCollision (player)
   if player.positionY < 0 then
     player.positionY = 1
   elseif player.positionY > (love.graphics.getHeight() - player.height) then
@@ -20,5 +29,12 @@ function handleKeypressPlayer(player, keyUp, KeyDown)
     player.positionY = player.positionY - moveSpeed
   elseif love.keyboard.isDown(KeyDown) then
     player.positionY = player.positionY + moveSpeed
+  end
+end
+
+function checkPlayerScore(player)
+  if player.score == 2 then
+    currentScreen = "gameover"
+    winner = player.name
   end
 end

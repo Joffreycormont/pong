@@ -28,7 +28,7 @@ function newBall(positionX, positionY, width, height)
   end
   
   
-  ball.colisionWithMap = function ()
+  ball.collisionWithMap = function ()
     -- if the ball hit bottom
     if ball.positionY > (love.graphics.getHeight() - ball.height) then
       ball.moveSpeedY = ball.moveSpeedY * -1
@@ -51,7 +51,7 @@ function newBall(positionX, positionY, width, height)
     end
   end
   
-  ball.colisionWithPlayer = function (player)
+  ball.collisionWithPlayer = function (player)
     
     if player.id == 1 then
       --player 1 (left side)

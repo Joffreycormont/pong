@@ -1,7 +1,8 @@
-function newPlayer(id, positionX, positionY, width, height)
+function newPlayer(id, name, positionX, positionY, width, height)
   
   local player = {}
   player.id = id
+  player.name = name
   player.positionX = positionX
   player.positionY =  positionY
   player.width = width
